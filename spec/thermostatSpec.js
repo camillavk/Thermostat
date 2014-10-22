@@ -35,8 +35,18 @@ describe('thermostat', function() {
 			expect(thermostat.decreaseTemperatureBy(11)).toThrow(new Error("That's too cold!"))
 		});
 
+		xit('cannot go above the maximum temperature', function() {
+			expect(thermostat.increaseTemperatureBy(10)).toThrow(new Error("That's too hot!"))
+		});
+
 		it('if power saving mode is on the max temp is 25', function() {
 			expect(thermostat.maxTemperature).toEqual(25)
+		});
+
+		it('it can reset the temperature to 20', function() {
+			thermostat.increaseTemperatureBy(5)
+			thermostat.resetTemperature()
+			expect(thermostat.temperature).toEqual(20)
 		});
 
 	});
@@ -61,6 +71,10 @@ describe('thermostat', function() {
 		it('if power saving mode is off, the max temp is 32', function() {
 			thermostat.turnPowerSaverOff()
 			expect(thermostat.maxTemperature).toEqual(32)
+		});
+
+		xit('cannot go above the maximum temperature', function() {
+			expect(thermostat.increaseTemperatureBy(15)).toThrow(new Error("That's too hot!"))
 		});
 
 	});

@@ -11,6 +11,9 @@ Thermostat.prototype.increaseTemperature = function() {
 
 Thermostat.prototype.increaseTemperatureBy = function(degrees) {
 	this.temperature += degrees;
+	if (this.temperature > this.maxTemperature) {
+		throw new Error("That's too hot!")
+	}
 };
 
 Thermostat.prototype.decreaseTemperature = function() {
@@ -30,11 +33,6 @@ Thermostat.prototype.turnPowerSaverOff = function() {
 	this.maxTemperature = 32;
 };
 
-
-// Thermostat.prototype.maxTemperature = function() {
-// 	if (this.isPowerSaverOn = false) {
-// 		this.maxTemperature += 7
-// 	}
-	// else if (this.isPowerSaverOn = false) {
-	// 	this.maxTemperature = 32
-	// }
+Thermostat.prototype.resetTemperature = function() {
+	this.temperature = 20;
+};
