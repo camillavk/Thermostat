@@ -79,4 +79,22 @@ describe('thermostat', function() {
 
 	});
 
+	describe('display features', function() {
+
+		it('should be yellow if the temperature is 20', function() {
+			expect(thermostat.displayColour).toEqual("yellow")
+		});
+
+		it('should be green if the temperature is below 18', function() {
+			thermostat.decreaseTemperatureBy(3)
+			expect(thermostat.displayColour).toEqual("green")
+		});
+
+		it('should be red if the temperature is above 25', function() {
+			thermostat.increaseTemperatureBy(5)
+			expect(thermostat.displayColour).toEqual("red")
+		});
+
+	});
+
 });

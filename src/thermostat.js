@@ -3,6 +3,7 @@ function Thermostat() {
 	this.isPowerSaverOn = true;
 	this.minTemperature = 10;
 	this.maxTemperature = 25;
+	this.displayColour = "yellow"
 }
 
 Thermostat.prototype.increaseTemperature = function() {
@@ -14,6 +15,9 @@ Thermostat.prototype.increaseTemperatureBy = function(degrees) {
 	if (this.temperature > this.maxTemperature) {
 		throw new Error("That's too hot!")
 	}
+	if (this.temperature >= 25) {
+		this.displayColour = "red"
+	}
 };
 
 Thermostat.prototype.decreaseTemperature = function() {
@@ -24,6 +28,9 @@ Thermostat.prototype.decreaseTemperatureBy = function(degrees) {
 	this.temperature -= degrees;
 	if (this.temperature < this.minTemperature) {
 		throw new Error("That's too cold!")
+	}
+	if (this.temperature < 18) {
+		this.displayColour = "green"
 	}
 	return this.temperature
 };
