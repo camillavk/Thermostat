@@ -31,12 +31,12 @@ describe('thermostat', function() {
 			expect(thermostat.minTemperature).toEqual(10)
 		});
 
-		xit('cannot go below the minimum temperature', function() {
-			expect(thermostat.decreaseTemperatureBy(11)).toThrow(new Error("That's too cold!"))
+		it('cannot go below the minimum temperature', function() {
+			expect(thermostat.decreaseTemperatureBy(11)).toEqual(new Error("That's too cold!"))
 		});
 
-		xit('cannot go above the maximum temperature', function() {
-			expect(thermostat.increaseTemperatureBy(10)).toThrow(new Error("That's too hot!"))
+		it('cannot go above the maximum temperature', function() {
+			expect(thermostat.increaseTemperatureBy(10)).toEqual(new Error("That's too hot!"))
 		});
 
 		it('if power saving mode is on the max temp is 25', function() {
@@ -73,8 +73,8 @@ describe('thermostat', function() {
 			expect(thermostat.maxTemperature).toEqual(32)
 		});
 
-		xit('cannot go above the maximum temperature', function() {
-			expect(thermostat.increaseTemperatureBy(15)).toThrow(new Error("That's too hot!"))
+		it('cannot go above the maximum temperature', function() {
+			expect(thermostat.increaseTemperatureBy(15)).toEqual(new Error("That's too hot!"))
 		});
 
 	});
