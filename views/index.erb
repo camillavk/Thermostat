@@ -14,6 +14,7 @@
 	<section class='temperature'>
 
 		<h1>The current temperature</h1>
+		<h2>Thermostat temperature</h2>
 
 		<aside>
 			<nav>
@@ -27,9 +28,16 @@
 
 	</section>
 
-	<script src='jquery-2.1.1.min.js'></script>
-	<script src='thermostat.js'></script>
-	<script src='interface.js'></script>
+	<script src='src/jquery-2.1.1.min.js'></script>
+	<script src='src/thermostat.js'></script>
+	<script src='src/interface.js'></script>
+	<script>
+		$(document).ready(function() {
+			$.getJSON('/weather', function(data) {
+					$('.temperature h1').text('Temperature outside: ' + data['list'][1]['main']['temp'] + 'C')})
+     new ThermostatView('.temperature h2');
+		});
+	</script>
 
 </body>
 
