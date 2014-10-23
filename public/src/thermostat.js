@@ -11,10 +11,11 @@ Thermostat.prototype.increaseTemperature = function() {
 };
 
 Thermostat.prototype.increaseTemperatureBy = function(degrees) {
-	this.temperature = this.temperature + degrees;
-	if (this.temperature > this.maxTemperature) {
-		return new Error("That's too hot!")
+	if (this.temperature >= this.maxTemperature) {
+		alert("That's too hot!")
+		return this.maxTemperature
 	}
+	this.temperature = this.temperature + degrees;
 	return this.temperature
 };
 
@@ -23,10 +24,11 @@ Thermostat.prototype.decreaseTemperature = function() {
 };
 
 Thermostat.prototype.decreaseTemperatureBy = function(degrees) {
-	this.temperature = this.temperature - degrees;
-	if (this.temperature < this.minTemperature) {
-		return new Error("That's too cold!")
+	if (this.temperature <= this.minTemperature) {
+		alert("That's too cold!")
+		return this.minTemperature
 	}
+	this.temperature = this.temperature - degrees;
 	return this.temperature
 };
 
