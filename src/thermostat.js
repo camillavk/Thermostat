@@ -7,32 +7,36 @@ function Thermostat() {
 }
 
 Thermostat.prototype.increaseTemperature = function() {
-	this.increaseTemperatureBy(1);
+	return this.increaseTemperatureBy(1);
 };
 
 Thermostat.prototype.increaseTemperatureBy = function(degrees) {
-	this.temperature += degrees;
+	this.temperature = this.temperature + degrees;
 	if (this.temperature > this.maxTemperature) {
 		return new Error("That's too hot!")
 	}
-	if (this.temperature >= 25) {
-		this.displayColour = "red"
-	}
+	return this.temperature
 };
 
 Thermostat.prototype.decreaseTemperature = function() {
-	this.decreaseTemperatureBy(1);
+	return this.decreaseTemperatureBy(1);
 };
 
 Thermostat.prototype.decreaseTemperatureBy = function(degrees) {
-	this.temperature -= degrees;
+	this.temperature = this.temperature - degrees;
 	if (this.temperature < this.minTemperature) {
 		return new Error("That's too cold!")
+	}
+	return this.temperature
+};
+
+Thermostat.prototype.changeColour = function() {
+	if (this.temperature >= 25) {
+		this.displayColour = "red"
 	}
 	if (this.temperature < 18) {
 		this.displayColour = "green"
 	}
-	else return this.temperature
 };
 
 Thermostat.prototype.turnPowerSaverOff = function() {
@@ -45,5 +49,5 @@ Thermostat.prototype.turnPowerSaverOn = function() {
 };
 
 Thermostat.prototype.resetTemperature = function() {
-	this.temperature = 20;
+	return this.temperature = 20;
 };
