@@ -1,0 +1,61 @@
+/****************import***********************/
+
+@import url('http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext');
+
+/*******************layout************************/
+
+ul {
+	position: relative;
+	margin: 0.1em;
+}
+
+ul li {
+	list-style-type: none;
+	display: inline-block;
+	padding: 1.5em;
+	position: relative;
+}
+
+a {
+  background: #aa34d9;
+  background-image: -webkit-linear-gradient(top, #aa34d9, #6d2bb8);
+  background-image: -moz-linear-gradient(top, #aa34d9, #6d2bb8);
+  background-image: -ms-linear-gradient(top, #aa34d9, #6d2bb8);
+  background-image: -o-linear-gradient(top, #aa34d9, #6d2bb8);
+  background-image: linear-gradient(to bottom, #aa34d9, #6d2bb8);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 35px;
+  padding: 9px 20px 10px 20px;
+  text-decoration: none;
+}
+
+a:hover {
+  background: #cc3cfc;
+  background-image: -webkit-linear-gradient(top, #cc3cfc, #8f34d9);
+  background-image: -moz-linear-gradient(top, #cc3cfc, #8f34d9);
+  background-image: -ms-linear-gradient(top, #cc3cfc, #8f34d9);
+  background-image: -o-linear-gradient(top, #cc3cfc, #8f34d9);
+  background-image: linear-gradient(to bottom, #cc3cfc, #8f34d9);
+  text-decoration: none;
+}
+
+
+
+/*******************typography*************************/
+*{
+	font-family:Lato;
+}
+
+h1 {
+	font-size: 3em;
+	/*text-shadow: 2px 2px 8px #6600CC;*/
+}
+
+h2, h3 {
+	font-size: 2em;
+	/*text-shadow: 2px 2px 8px #6600CC;*/
+}
